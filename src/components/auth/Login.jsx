@@ -6,9 +6,10 @@ const Login = () => {
   const submitHandler = (e)=>{
     e.preventDefault()
   //  console.log("hellowwwww");
-
-   
-    
+  console.log("email is :",email)
+  console.log("password is" ,password) ;
+  setEmail('')
+  setpassword('')
   }
   return (
     <div className="flex w-full h-screen items-center justify-center bg-gray-900">
@@ -18,12 +19,20 @@ const Login = () => {
           submitHandler(e)
         }} className="flex flex-col items-center justify-center">
           <input
+          value={email}
+          onChange={(e)=>{
+            setEmail(e.target.value)
+          }}
             required
             type="email"
             placeholder="Email Address"
             className="w-full border border-gray-600 rounded-full py-3 px-5 text-lg bg-gray-700 text-white placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-300"
           />
           <input
+          value={password}
+          onChange={(e)=>{
+          setpassword(e.target.value)
+          }}
             required
             type="password"
             placeholder="Password"
